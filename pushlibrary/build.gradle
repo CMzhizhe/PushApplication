@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies["appcompat"]
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    //vivo
+    api files('libs/vivo_pushsdk-v2.9.0.0.aar')
+    //oppp
+    api files('libs/oppo_mcssdk-2.0.2.jar')
+    //激光
+    api 'cn.jiguang.sdk:jpush:3.5.4'
+    api 'cn.jiguang.sdk:jcore:2.2.4'
+    //华为
+    api 'com.huawei.hms:push:3.0.3.301'
+    //魅族
+    api files('libs/meizu_push-internal-3.8.7.aar')
+    //小米
+    api files('libs/MiPush_SDK_Client_3_7_2.jar')
+    implementation rootProject.ext.dependencies["gson"]
+}

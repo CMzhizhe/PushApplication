@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">pushlibrary</string>
+    <string name="tip_init_success">推送初始化成功</string>
+    <string name="tip_setalias">设置别名成功</string>
+    <string name="tip_setalias_failed">设置别名失败</string>
+    <string name="tip_loginOut">取消推送成功</string>
+</resources>

@@ -1,0 +1,47 @@
+ext {
+
+    //基本配置
+    android = [
+            compileSdkVersion: 29,
+            minSdkVersion    : 19,
+            targetSdkVersion : 29,
+            buildToolsVersion: "29.0.2",
+            applicationId    : "com.gxx.pushapplication",
+            multiDexEnabled  : true,
+            versionCode      : 1,
+            versionName      : "1.0.0",
+            abiFilters       : "armeabi-v7a"
+    ]
+
+
+    //key管理
+    appkeymanager = [
+            //JPush
+            JPUSH_APPKEY               : "6e2f652a3520fbf63be35f35", //JPush 上注册的包名对应的 Appkey.
+            JPUSH_CHANNEL              : "developer-default", //暂时填写默认值即可.
+
+            //小米
+            XIAOMI_APPID               : "2882303761  518297385",//
+            XIAOMI_APPKEY              : "526182  9748385",
+
+            //华为
+            HUAWEI_APPID:"1015  83731",
+
+            //魅族
+            MEIZU_APPID                : "",
+            MEIZU_APPKEY               : "",
+
+    ]
+
+
+    //依赖的类，但是并不是所有的工具都会使用到
+    dependencies = [
+            "appcompat"                    : 'androidx.appcompat:appcompat:1.1.0',
+            "constraintlayout"             : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            "recyclerview"                 : 'androidx.recyclerview:recyclerview:1.0.0',
+            "gson"                         : 'com.google.code.gson:gson:2.2.4',
+            "multidex"                     : 'androidx.multidex:multidex:2.0.1',
+            "core-ktx"                     : 'androidx.core:core-ktx:1.0.0',
+    ]
+
+}

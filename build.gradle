@@ -1,0 +1,29 @@
+apply from: "config.gradle"
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url 'http://developer.huawei.com/repo/' }
+        maven { url 'http://developer.huawei.com/repo/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath 'com.huawei.agconnect:agcp:1.0.0.300'//华为
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url 'http://developer.huawei.com/repo/' }
+        maven { url 'http://developer.huawei.com/repo/' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
