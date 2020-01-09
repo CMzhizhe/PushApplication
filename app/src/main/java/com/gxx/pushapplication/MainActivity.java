@@ -14,6 +14,7 @@ import com.gxx.pushlibrary.rom.jiguang.JPushInit;
 import com.gxx.pushlibrary.rom.meizu.MeiZuInit;
 import com.gxx.pushlibrary.rom.xiaomi.XiaomiInit;
 
+import static com.gxx.pushlibrary.base.PushConstant.PUSH_RECEIVE_ALIAS;
 import static com.gxx.pushlibrary.base.PushConstant.PUSH_RECEIVE_INIT_RESULT;
 import static com.gxx.pushlibrary.base.PushConstant.PUSH_RECEIVE_MESSAGE;
 import static com.gxx.pushlibrary.base.PushConstant.PUSH_RECEIVE_NOTIFICATION;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         intentFilter.addAction(PUSH_RECEIVE_NOTIFICATION);//收到后台推送
         intentFilter.addAction(PUSH_RECEIVE_NOTIFICATION_CLICK);//用户点击推送
         intentFilter.addAction(PUSH_RECEIVE_OTHER_OPTIONS);//其它事情操作
+        intentFilter.addAction(PUSH_RECEIVE_ALIAS);//其它事情操作
         LocalBroadcastManager.getInstance(this).registerReceiver(pushBroadcastReceiver,intentFilter);
     }
 
